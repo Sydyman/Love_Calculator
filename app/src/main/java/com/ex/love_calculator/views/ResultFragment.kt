@@ -45,6 +45,10 @@ class ResultFragment : Fragment(),ShowResult {
 
         binding.btnAgain.setOnClickListener {
             presenter.getPercentage(firstName,secondName)
+           fun showResult(percent: String, result: String){
+                binding.tvResult.text = result
+                binding.tvScore.text = percent
+            }
         }
 
 
@@ -55,7 +59,9 @@ class ResultFragment : Fragment(),ShowResult {
 
 
 
-    override fun showResult(percent: String, result: String) {
+    override fun showResult(fname:String,sname:String,percent: String, result: String) {
+        binding.tvFirst.text = fname
+        binding.tvSecond.text = sname
         binding.tvResult.text = result
         binding.tvScore.text = percent
     }

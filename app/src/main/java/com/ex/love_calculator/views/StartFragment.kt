@@ -65,7 +65,7 @@ class StartFragment : Fragment(),ShowResult {
         }
     }
 
-    override fun showResult(percent: String, result: String) {
+    override fun showResult(fname: String, sname: String, percent: String, result: String) {
         if (isAdded) {
             Toast.makeText(requireContext(), result, Toast.LENGTH_SHORT).show()
         }
