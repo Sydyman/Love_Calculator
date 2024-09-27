@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.ex.love_calculator.R
 import com.ex.love_calculator.databinding.FragmentResultBinding
 import com.ex.love_calculator.interfaces.ShowResult
 
@@ -17,8 +19,8 @@ class ResultFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentResultBinding.inflate(inflater,container,false)
+    ): View {
+        binding = FragmentResultBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,7 +30,7 @@ class ResultFragment : Fragment() {
         fillData()
     }
 
-    private fun fillData() = with(binding){
+    private fun fillData() = with(binding) {
         val firstName = arguments?.getString("first_name")
         val secondName = arguments?.getString("second_name")
         val percentage = arguments?.getString("percentage")
@@ -36,5 +38,10 @@ class ResultFragment : Fragment() {
         tvFirst.text = firstName
         tvSecond.text = secondName
         tvScore.text = percentage
+
+        binding.tvHistory.setOnClickListener {
+            findNavController().navigate(R.id.action_resultFragment_to_historyFragment)
+        }
     }
 }
+

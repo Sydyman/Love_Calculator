@@ -12,11 +12,18 @@
         <action
             android:id="@+id/action_startFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.ex.love_calculator.ui.fragments.ResultFragment"
-        android:label="ResultFragment" />
+        android:label="ResultFragment" >
+        <action
+            android:id="@+id/action_resultFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onBoardFragment"
         android:name="com.ex.love_calculator.ui.onBoard.onBoardFragment"
@@ -31,4 +38,8 @@
         android:name="com.ex.love_calculator.ui.onBoard.PagingFragment"
         android:label="fragment_paging"
         tools:layout="@layout/fragment_paging" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.ex.love_calculator.ui.fragments.HistoryFragment"
+        android:label="HistoryFragment" />
 </navigation>

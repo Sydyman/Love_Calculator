@@ -15,5 +15,7 @@ class SharedPref @Inject constructor(private val sharedPreferences: SharedPrefer
 
     fun setOnBoardComplete(b:Boolean){
         sharedPreferences.edit().putBoolean(SHOW,true).apply()
+
+
     }
 }

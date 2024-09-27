@@ -56,6 +56,7 @@ dependencies {
 
     // Navigation
     val nav_version = "2.7.7"
+    val room_version = "2.6.1"
 // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
@@ -65,5 +66,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation(("androidx.fragment:fragment-ktx:1.8.0"))
+
+    implementation ("androidx.room:room-runtime:$room_version")
+    annotationProcessor ("androidx.room:room-compiler:$room_version")
 
 }
